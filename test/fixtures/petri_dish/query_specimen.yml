@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sql: MyString
+  name: MyString
+  connection: MyString
+  binds: MyString
+  type_casted_binds: MyString
+  statment_name: MyString
+  cached: MyString
+
+two:
+  sql: MyString
+  name: MyString
+  connection: MyString
+  binds: MyString
+  type_casted_binds: MyString
+  statment_name: MyString
+  cached: MyString
