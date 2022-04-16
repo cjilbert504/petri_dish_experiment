@@ -1,0 +1,8 @@
+Description:
+    Explain the generator
+
+Example:
+    bin/rails generate petri_dish Thing
+
+    This will create:
+        what/will/it/create

@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  controller: MyString
+  action: MyString
+  params: MyString
+  headers: MyString
+  format: MyString
+  method: MyString
+  path: MyString
+  request: MyString
+  response: MyString
+  status: MyString
+  view_runtime: MyString
+  db_runtime: MyString
+
+two:
+  controller: MyString
+  action: MyString
+  params: MyString
+  headers: MyString
+  format: MyString
+  method: MyString
+  path: MyString
+  request: MyString
+  response: MyString
+  status: MyString
+  view_runtime: MyString
+  db_runtime: MyString

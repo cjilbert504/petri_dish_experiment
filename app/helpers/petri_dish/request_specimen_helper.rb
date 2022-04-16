@@ -1,0 +1,2 @@
+module PetriDish::RequestSpecimenHelper
+end
