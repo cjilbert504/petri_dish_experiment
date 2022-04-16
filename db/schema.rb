@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_16_004020) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_16_150632) do
+  create_table "petri_dish_query_specimen", force: :cascade do |t|
+    t.string "sql"
+    t.string "name"
+    t.string "connection"
+    t.string "binds"
+    t.string "type_casted_binds"
+    t.string "statment_name"
+    t.string "cached"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "petri_dish_request_specimen", force: :cascade do |t|
     t.string "controller"
     t.string "action"
