@@ -8,12 +8,10 @@ class PetriDishGenerator < Rails::Generators::NamedBase
   #   generate_petri_dish_initializer
   # end
 
-  private 
-
+  private
   def generate_petri_dish_initializer
     # copy_file methods copies the file from the source_root to the destination, first argument is the file name, second is the destination
     # if extention file.rb gives problems, we can use .templete
     copy_file 'petri_dish_generator.rb', 'app/config/initializers/petri'
   end
-
 end
