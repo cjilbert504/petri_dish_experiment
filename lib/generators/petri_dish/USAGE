@@ -1,8 +1,13 @@
 Description:
-    Explain the generator
-
+    creates basic structure for petridish 
 Example:
-    bin/rails generate petri_dish Thing
+    bin/rails generate petri_dish:request_specimen
+    will generate:
+        config/initializers/petri_dish.rb if file doesn't allready exist. 
+    
 
-    This will create:
-        what/will/it/create
+bin/rails generate petri_dish:query_specimen
+    will generate: 
+    should initialize diffent file than request_specimen
+    config/initializers/petri_dish.rb
+    
