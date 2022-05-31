@@ -1,0 +1,66 @@
+<div class="bg-gray-100">
+  <div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
+        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Petri Dish</h1>
+      </div>
+
+      <section aria-labelledby="products-heading" class="pt-6 pb-24">
+        <h2 id="products-heading" class="sr-only">Products</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <!-- Filters -->
+          <form class="hidden lg:block">
+            <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6">
+              <li>
+                <a href="#"> Requests </a>
+              </li>
+              <li>
+                <a href="#"> Queries </a>
+              </li>
+            </ul>
+          </form>
+
+          <div class="lg:col-span-3 rounded-lg shadow-xl">
+            <table class="min-w-full">
+              <thead class="bg-white border-b">
+                <tr>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    SQL
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    Name
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    Connection
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    Happend
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @query_specimens.each do |specimen| %>
+                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <%= specimen.sql %>
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <%= specimen.name %>
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <%= specimen.connection %>
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <%= specimen.created_at.strftime("%b %d, %Y at %l:%M %p %z") %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
