@@ -13,10 +13,10 @@
           <form class="hidden lg:block">
             <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6">
               <li>
-                <a href="#"> Requests </a>
+                <%= link_to "Requests", petri_dish_request_specimens_path %>
               </li>
               <li>
-                <a href="#"> Queries </a>
+                <%= link_to "Queries", petri_dish_query_specimens_path %>
               </li>
             </ul>
           </form>
@@ -26,13 +26,10 @@
               <thead class="bg-white border-b">
                 <tr>
                   <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                    SQL
+                    Record Count (# of instantiated records)
                   </th>
                   <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                    Name
-                  </th>
-                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                    Connection
+                    Class Name
                   </th>
                   <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                     Happend
@@ -43,13 +40,10 @@
                 <% @query_specimens.each do |specimen| %>
                   <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.sql %>
+                      <%= specimen.record_count %>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.name %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.connection %>
+                      <%= specimen.class_name %>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       <%= specimen.created_at.strftime("%b %d, %Y at %l:%M %p %z") %>
