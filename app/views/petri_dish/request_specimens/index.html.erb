@@ -43,7 +43,7 @@
                 <% @request_specimens.each do |specimen| %>
                   <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.method %>
+                      <%= link_to specimen.method, petri_dish_request_specimen_path(specimen.id) %>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       <%= specimen.path %>

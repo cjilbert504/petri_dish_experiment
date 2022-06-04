@@ -1,7 +1,5 @@
-ActiveSupport::Notifications.subscribe "process_action.action_controller" do |*args|
-  PetriDish::RequestSpecimen.prepare_slide(args)
-end
+require "petri_dish"
 
-ActiveSupport::Notifications.subscribe "instantiation.active_record" do |*args|
-  PetriDish::QuerySpecimen.prepare_slide(args)
+PetriDish.configure do |config|
+  config.request_specimen = true
 end
