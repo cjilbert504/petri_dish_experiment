@@ -1,6 +1,6 @@
-class PetriDish::RequestSpecimen #< ApplicationRecord
-  attr_reader :controller, :action, :params, :headers, :format, :method, :path, :request, :response,
-              :status, :view_runtime, :db_runtime, :created_at
+class PetriDish::RequestSpecimen
+  attr_reader :controller, :action, :params, :headers, :format, :method, :path,
+              :request, :response, :status, :view_runtime, :db_runtime, :created_at
 
   @@all = []
 
@@ -10,7 +10,6 @@ class PetriDish::RequestSpecimen #< ApplicationRecord
 
   def self.prepare_slide(args)
     data = args.extract_options!
-    #create!(data) if !data[:path].include?("petri_dish")
     unless data[:path].include? "petri_dish"
       new data
     end
@@ -30,6 +29,20 @@ class PetriDish::RequestSpecimen #< ApplicationRecord
    @view_runtime = data[:view_runtime]
    @db_runtime = data[:db_runtime]
    @created_at = Time.now
-   @@all << self
+   control_specimen_population
+  end
+
+  private
+
+  def control_specimen_population
+    all_specimens = self.class.all
+    
+    case all_specimens.size
+    when 10
+      all_specimens.shift
+      all_specimens << self
+    else
+      all_specimens << self
+    end
   end
 end
