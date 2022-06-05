@@ -1,8 +1,9 @@
 require "petri_dish/specimens/request"
+require "petri_dish/specimens/query"
 
 module PetriDish
   class << self
-    attr_accessor :request_specimen
+    attr_accessor :request_specimen, :query_specimen
 
     def configure
       yield self
@@ -11,6 +12,10 @@ module PetriDish
 
     def configure_request_specimen
       PetriDish::Specimens::Request.prepare_slide
+    end
+
+    def configure_query_specimen
+      PetriDish::Specimens::Query.prepare_slide
     end
 
     private

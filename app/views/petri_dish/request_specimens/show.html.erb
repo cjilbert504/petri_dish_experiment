@@ -21,21 +21,114 @@
             </ul>
           </form>
           <div class="lg:col-span-3 rounded-lg shadow-xl">
-            <ul class="list-none">
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Verb:</span><span><%= @request_specimen.method %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Controller:</span><span><%= @request_specimen.controller %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Action:</span><span><%= @request_specimen.action %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Params:</span><span><%= @request_specimen.params %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Headers:</span><span><%= @request_specimen.headers %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Format:</span><span><%= @request_specimen.format %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Path:</span><span><%= @request_specimen.path %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Request:</span><span><%= @request_specimen.request %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Response:</span><span><%= @request_specimen.response %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Status:</span><span><%= @request_specimen.status %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">View Runtime:</span><span><%= @request_specimen.view_runtime %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">DB Runtime:</span><span><%= @request_specimen.db_runtime %></span></li>
-              <li class="space-x-4"><span class="text-lg font-medium text-gray-900 px-6 py-4">Happened:</span><span><%= @request_specimen.created_at.strftime("%b %d, %Y at %l:%M %p %z") %></span></li>
-            </ul>
+            <table class="min-w-full">
+              <tbody>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Method
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.method %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Controller
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.controller %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Action
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.action %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Params
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.params %>
+                  </td>
+                </tr>
+                <!-- <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Headers
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%#= @request_specimen.headers %>
+                  </td>
+                </tr> -->
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Format
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.format %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Path
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.path %>
+                  </td>
+                </tr>
+                <!-- <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Request
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%#= @request_specimen.request %>
+                  </td> -->
+                </tr>
+                <!-- <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Response
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%#= @request_specimen.response %>
+                  </td> -->
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Status
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.status %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    View Runtime
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.view_runtime %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    DB Runtime
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.db_runtime %>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                  <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                    Happened
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <%= @request_specimen.created_at.strftime("%b %d, %Y at %l:%M %p %z") %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

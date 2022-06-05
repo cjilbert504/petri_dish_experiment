@@ -26,10 +26,7 @@
               <thead class="bg-white border-b">
                 <tr>
                   <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                    Record Count (# of instantiated records)
-                  </th>
-                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                    Class Name
+                    SQL
                   </th>
                   <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                     Happend
@@ -40,13 +37,7 @@
                 <% @query_specimens.each do |specimen| %>
                   <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.record_count %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.class_name %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= specimen.created_at.strftime("%b %d, %Y at %l:%M %p %z") %>
+                      <%= specimen.sql %>
                     </td>
                   </tr>
                 <% end %>
