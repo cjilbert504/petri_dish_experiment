@@ -7,7 +7,7 @@ module PetriDish
 
     def configure
       yield self
-      _process_configuration
+      process_configuration
     end
 
     def configure_request_specimen
@@ -20,7 +20,7 @@ module PetriDish
 
     private
 
-    def _process_configuration
+    def process_configuration
       instance_variables.each do |ivar|
         if instance_variable_get(ivar)
           method_name = "configure_" + ivar.slice(1..-1)
