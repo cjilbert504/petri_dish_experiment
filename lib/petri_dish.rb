@@ -11,11 +11,11 @@ module PetriDish
     end
 
     def configure_request_specimen
-      PetriDish::Specimens::Request.prepare_slide
+      PetriDish::Specimens::Request
     end
 
     def configure_query_specimen
-      PetriDish::Specimens::Query.prepare_slide
+      PetriDish::Specimens::Query
     end
 
     private
@@ -24,7 +24,8 @@ module PetriDish
       instance_variables.each do |ivar|
         if instance_variable_get(ivar)
           method_name = "configure_" + ivar.slice(1..-1)
-          send(method_name)
+          klass = send(method_name)
+          klass.prepare_slide
         end
       end
     end
